@@ -10,7 +10,7 @@ function initDev() {
   }
 }
 
-if (!!(process.env.NODE_ENV !== "production")) {
+if (!!(process.env.NODE_ENV !== "production") || !!(process.env.WARNING_LEVEL !== "none")) {
   initDev();
 }
 const compileCache = /* @__PURE__ */ Object.create(null);
@@ -39,7 +39,7 @@ function compileToFunction(template, options) {
     {
       hoistStatic: true,
       onError: !!(process.env.NODE_ENV !== "production") || !!(process.env.WARNING_LEVEL !== "none") ? onError : void 0,
-      onWarn: !!(process.env.NODE_ENV !== "production") ? (e) => onError(e, true) : NOOP
+      onWarn: !!(process.env.NODE_ENV !== "production") || !!(process.env.WARNING_LEVEL !== "none") ? (e) => onError(e, true) : NOOP
     },
     options
   );

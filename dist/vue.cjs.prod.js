@@ -41,7 +41,7 @@ function compileToFunction(template, options) {
     {
       hoistStatic: true,
       onError: onError ,
-      onWarn: shared.NOOP
+      onWarn: (e) => onError(e, true) 
     },
     options
   );

@@ -10563,6 +10563,9 @@ function initDev() {
     {
       console.info(
         `You are running a development build of Vue.
+__WARN__ and __DEV__ are 
+` + true + `
+` + true + `
 Make sure to use the production build (*.prod.js) when deploying for production.`
       );
     }
