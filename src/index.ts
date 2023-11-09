@@ -47,7 +47,7 @@ function compileToFunction(
   const opts = extend(
     {
       hoistStatic: true,
-      onError: __DEV__ ? onError : undefined,
+      onError: __DEV__ || __WARN__ ? onError : undefined,
       onWarn: __DEV__ ? e => onError(e, true) : NOOP
     } as CompilerOptions,
     options

@@ -38,7 +38,7 @@ function compileToFunction(template, options) {
   const opts = extend(
     {
       hoistStatic: true,
-      onError: !!(process.env.NODE_ENV !== "production") ? onError : void 0,
+      onError: !!(process.env.NODE_ENV !== "production") || !!(process.env.WARNING_LEVEL !== "none") ? onError : void 0,
       onWarn: !!(process.env.NODE_ENV !== "production") ? (e) => onError(e, true) : NOOP
     },
     options
