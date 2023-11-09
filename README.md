@@ -1,4 +1,4 @@
-# vue
+# Vue - MEDIMO EDIT
 
 ## Which dist file to use?
 
