@@ -1570,7 +1570,6 @@ function callWithAsyncErrorHandling(fn, instance, type, args) {
   return values;
 }
 function handleError(err, instance, type, throwInDev = true) {
-  console.error("STAN REMOVE LATER! Inside the error handler");
   const contextVNode = instance ? instance.vnode : null;
   if (instance) {
     let cur = instance.parent;
