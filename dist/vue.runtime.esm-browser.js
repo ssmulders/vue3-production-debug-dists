@@ -251,7 +251,7 @@ const replacer = (_key, val) => {
 };
 
 function warn$1(msg, ...args) {
-  console.warn(`[Vue warn] ${msg}`, ...args);
+  console.warn(`[Medimo Vue Warn] ${msg}`, ...args);
 }
 
 let activeEffectScope;

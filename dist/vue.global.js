@@ -319,7 +319,7 @@ var Vue = (function (exports) {
   };
 
   function warn$1(msg, ...args) {
-    console.warn(`[Vue warn] ${msg}`, ...args);
+    console.warn(`[Medimo Vue Warn] ${msg}`, ...args);
   }
 
   let activeEffectScope;
@@ -10626,7 +10626,7 @@ Make sure to use the production build (*.prod.js) when deploying for production.
     throw error;
   }
   function defaultOnWarn(msg) {
-    console.warn(`[Vue warn] ${msg.message}`);
+    console.warn(`[Medimo Vue Error] ${msg.message}`);
   }
   function createCompilerError(code, loc, messages, additionalMessage) {
     const msg = (messages || errorMessages)[code] + (additionalMessage || ``) ;
