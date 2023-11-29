@@ -1494,7 +1494,7 @@ var Vue = (function (exports) {
         ]
       );
     } else {
-      const warnArgs = [`[Vue Medimo Warn]: ${msg}`, ...args];
+      const warnArgs = [`[Medimo Vue Warn]: ${msg}`, ...args];
       if (trace.length && // avoid spamming console during tests
       true) {
         warnArgs.push(`
