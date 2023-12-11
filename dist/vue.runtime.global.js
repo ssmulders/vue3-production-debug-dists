@@ -1414,6 +1414,8 @@ var Vue = (function (exports) {
     const instance = stack.length ? stack[stack.length - 1].component : null;
     const appWarnHandler = instance && instance.appContext.config.warnHandler;
     const trace = getComponentTrace();
+    console.log("warn appWarnHandler");
+    console.log(appWarnHandler);
     if (appWarnHandler) {
       callWithErrorHandling(
         appWarnHandler,
@@ -1612,7 +1614,7 @@ var Vue = (function (exports) {
       if (contextVNode) {
         popWarningContext();
       }
-      if (throwInDev) {
+      if (throwInDev || true) {
         throw err;
       } else {
         console.error(err);
