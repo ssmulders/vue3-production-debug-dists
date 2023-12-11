@@ -1478,12 +1478,7 @@ function warn(msg, ...args) {
   const instance = stack.length ? stack[stack.length - 1].component : null;
   const appWarnHandler = instance && instance.appContext.config.warnHandler;
   const trace = getComponentTrace();
-  console.log("trace");
-  console.log(trace);
-  console.log("msg");
-  console.log(msg);
   if (appWarnHandler) {
-    console.log("appWarnHandler");
     callWithErrorHandling(
       appWarnHandler,
       instance,
@@ -1498,7 +1493,6 @@ function warn(msg, ...args) {
       ]
     );
   } else if (rootWarnHandler) {
-    console.log("rootWarnHandler");
     callWithErrorHandling(
       rootWarnHandler,
       currentInstance,
@@ -4415,9 +4409,7 @@ const PublicInstanceProxyHandlers = {
     } else if (currentRenderingInstance && (!isString(key) || // #1091 avoid internal isRef/isVNode checks on component instance leading
     // to infinite warning loop
     key.indexOf("__v") !== 0)) {
-      console.log("1");
       if (data !== EMPTY_OBJ && isReservedPrefix(key[0]) && hasOwn(data, key)) {
-        console.log("1.1");
         warn(
           `Property ${JSON.stringify(
             key
