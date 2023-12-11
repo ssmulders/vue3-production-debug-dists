@@ -1490,6 +1490,8 @@ function warn(msg, ...args) {
   console.log("currentInstance");
   console.log(currentInstance);
   console.log(currentInstance == null ? void 0 : currentInstance.root.appContext.config.warnHandler);
+  console.log("trace");
+  console.log(trace);
   if (appWarnHandler) {
     callWithErrorHandling(
       appWarnHandler,
