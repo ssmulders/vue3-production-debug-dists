@@ -1415,22 +1415,13 @@ var Vue = (function (exports) {
     const rootWarnHandler = currentInstance && currentInstance.root.appContext.config.warnHandler;
     const instance = stack.length ? stack[stack.length - 1].component : null;
     const appWarnHandler = instance && instance.appContext.config.warnHandler;
-    const appErrorHandler = instance && instance.appContext.config.errorHandler;
     const trace = getComponentTrace();
-    console.log("warn args");
-    console.log(args);
-    console.log("warn appWarnHandler");
-    console.log(appWarnHandler);
-    console.log("warn appErrorHandler");
-    console.log(appErrorHandler);
-    console.log("instance");
-    console.log(instance);
-    console.log("currentInstance");
-    console.log(currentInstance);
-    console.log(currentInstance == null ? void 0 : currentInstance.root.appContext.config.warnHandler);
     console.log("trace");
     console.log(trace);
+    console.log("msg");
+    console.log(msg);
     if (appWarnHandler) {
+      console.log("appWarnHandler");
       callWithErrorHandling(
         appWarnHandler,
         instance,
@@ -1445,12 +1436,13 @@ var Vue = (function (exports) {
         ]
       );
     } else if (rootWarnHandler) {
+      console.log("rootWarnHandler");
       callWithErrorHandling(
         rootWarnHandler,
         currentInstance,
         11,
         [
-          msg + args.join("")
+          msg
         ]
       );
     } else {
@@ -4370,38 +4362,11 @@ If this is a native custom element, make sure to exclude it from component resol
           )} must be accessed via $data because it starts with a reserved character ("$" or "_") and is not proxied on the render context.`
           );
         } else if (instance === currentRenderingInstance) {
-          console.log("2 else if");
-          console.log("2 currentRenderingInstance");
-          console.log(currentRenderingInstance);
-          console.log("2 !isString(key)");
-          console.log(!isString(key));
-          console.log("2 key.indexOf('__v') !== 0");
-          console.log(key.indexOf("__v") !== 0);
-          console.log("2 instance");
-          console.log(instance);
           warn(
             `Property ${JSON.stringify(key)} was accessed during render but is not defined on instance.`,
             instance
           );
-        } else {
-          console.log("ELSE");
-          console.log(true);
-          console.log("currentRenderingInstance");
-          console.log(currentRenderingInstance);
-          console.log("!isString(key)");
-          console.log(!isString(key));
-          console.log("key.indexOf('__v') !== 0");
-          console.log(key.indexOf("__v") !== 0);
         }
-      } else {
-        console.log("FALLTHROUGH");
-        console.log(true);
-        console.log("currentRenderingInstance");
-        console.log(currentRenderingInstance);
-        console.log("!isString(key)");
-        console.log(!isString(key));
-        console.log("key.indexOf('__v') !== 0");
-        console.log(key.indexOf("__v") !== 0);
       }
     },
     set({ _: instance }, key, value) {
