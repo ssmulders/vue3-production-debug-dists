@@ -1509,7 +1509,7 @@ function warn(msg, ...args) {
   } else if (rootWarnHandler) {
     callWithErrorHandling(
       rootWarnHandler,
-      instance,
+      currentInstance,
       11,
       [
         msg + args.join("")
