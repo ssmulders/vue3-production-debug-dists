@@ -10,7 +10,7 @@ function initDev() {
   }
 }
 
-if (!!(process.env.NODE_ENV !== "production") || !!(process.env.WARNING_LEVEL !== "none")) {
+if (!!(process.env.NODE_ENV !== "production")) {
   initDev();
 }
 const compileCache = /* @__PURE__ */ Object.create(null);
